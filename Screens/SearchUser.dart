@@ -116,7 +116,7 @@ class SearchUser extends SearchDelegate {
                         onTap: () {},
                         child: Container(
                           margin: EdgeInsets.only(bottom: 8),
-                          child: Image.asset("images/1.png"),
+                          child: Image.network('${data?[index].image}'),
                           height: 120,
                           width: 120,
                         ),

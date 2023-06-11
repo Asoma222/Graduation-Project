@@ -60,8 +60,8 @@ class HomeAppBar extends StatelessWidget {
           ),
           Image.asset(
             "images/11.png",
-            height: 100,
-            width: 100,
+            height: 55,
+            width: 55,
           ),
         ],
       ),

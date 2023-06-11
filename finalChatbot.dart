@@ -147,42 +147,88 @@ class _FChatBotState extends State<FChatBot> {
                               icon: Icon(Icons.send),
                               color: Color.fromRGBO(0, 185, 255, 1.0),
                               onPressed: () async {
-                                if (_textEditingController.text.isEmpty) {
-                                  // if itdoesn't work well delete count =0 from the condition
-                                  // Do nothing
-                                } else {
-                                  count = 0;
-                                  String message = _textEditingController.text;
-                                  setState(() {
-                                    _chatMessages.add({
-                                      "text": message,
-                                      "chat_index": 0
-                                    }); // Add a Map object with "text" and "chat_index" keys and their corresponding values
-                                    _textEditingController.clear();
-                                  });
-                                  final url = Uri.parse(
-                                      "http://localhost:5005/webhooks/rest/webhook");
-                                  final response = await http.post(url,
-                                      headers: {
-                                        'Content-Type': 'application/json'
-                                      },
-                                      body: jsonEncode({
-                                        "sender": "khaled",
-                                        "message": message
-                                      }));
-                                  if (response.statusCode == 200) {
-                                    String reply =
-                                        jsonDecode(response.body)[0]['text'];
-                                    print(reply);
+                                try {
+                                  if (_textEditingController.text.isEmpty) {
+                                    // if itdoesn't work well delete count =0 from the condition
+                                    // Do nothing
+                                  } else {
+                                    count = 0;
+                                    String message =
+                                        _textEditingController.text;
                                     setState(() {
                                       _chatMessages.add({
-                                        "text": reply,
-                                        "chat_index": 1
+                                        "text": message,
+                                        "chat_index": 0
                                       }); // Add a Map object with "text" and "chat_index" keys and their corresponding values
+                                      _textEditingController.clear();
                                     });
+                                    final url = Uri.parse(
+                                        "http://localhost:5005/webhooks/rest/webhook");
+                                    final response = await http.post(url,
+                                        headers: {
+                                          'Content-Type': 'application/json'
+                                        },
+                                        body: jsonEncode({
+                                          "sender": "khaled",
+                                          "message": message
+                                        }));
+                                    if (response.statusCode == 200) {
+                                      String reply =
+                                          jsonDecode(response.body)[0]['text'];
+                                      print(reply);
+                                      setState(() {
+                                        _chatMessages.add({
+                                          "text": reply,
+                                          "chat_index": 1
+                                        }); // Add a Map object with "text" and "chat_index" keys and their corresponding values
+                                      });
+                                    }
+                                    count = 1; // delete it if there's problem
                                   }
-                                  count = 1; // delete it if there's problem
+                                } catch (e) {
+                                  setState(() {
+                                    _chatMessages.add({
+                                      "text": "there's no Ai work",
+                                      "chat_index": 1
+                                    });
+                                  });
                                 }
+                                // if (_textEditingController.text.isEmpty) {
+                                //   // if itdoesn't work well delete count =0 from the condition
+                                //   // Do nothing
+                                // } else {
+                                //   count = 0;
+                                //   String message = _textEditingController.text;
+                                //   setState(() {
+                                //     _chatMessages.add({
+                                //       "text": message,
+                                //       "chat_index": 0
+                                //     }); // Add a Map object with "text" and "chat_index" keys and their corresponding values
+                                //     _textEditingController.clear();
+                                //   });
+                                //   final url = Uri.parse(
+                                //       "http://localhost:5005/webhooks/rest/webhook");
+                                //   final response = await http.post(url,
+                                //       headers: {
+                                //         'Content-Type': 'application/json'
+                                //       },
+                                //       body: jsonEncode({
+                                //         "sender": "khaled",
+                                //         "message": message
+                                //       }));
+                                //   if (response.statusCode == 200) {
+                                //     String reply =
+                                //         jsonDecode(response.body)[0]['text'];
+                                //     print(reply);
+                                //     setState(() {
+                                //       _chatMessages.add({
+                                //         "text": reply,
+                                //         "chat_index": 1
+                                //       }); // Add a Map object with "text" and "chat_index" keys and their corresponding values
+                                //     });
+                                //   }
+                                //   count = 1; // delete it if there's problem
+                                // }
                               }),
                         )
                       ]),
