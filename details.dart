@@ -28,6 +28,16 @@ class _Details_ScreenState extends State<Details_Screen2> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back)),
+          iconTheme: IconThemeData(
+            color: Colors
+                .black, // Set the color of all icons in the app bar to black
+          ),
+          backgroundColor: Colors.white,
           title: Text(widget.id.toString()),
         ),
         body: SafeArea(
