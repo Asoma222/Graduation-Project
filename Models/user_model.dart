@@ -41,6 +41,7 @@ class Welcome {
 class Result {
   Result({
     required this.id,
+    required this.image,
     required this.categoryName,
     required this.company,
     required this.effectiveMaterial,
@@ -51,6 +52,7 @@ class Result {
   });
 
   int id;
+  String image;
   String categoryName;
   String company;
   String effectiveMaterial;
@@ -61,6 +63,7 @@ class Result {
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
         id: json["id"],
+        image: json["image"],
         categoryName: json["category_name"],
         company: json["company"],
         effectiveMaterial: json["effective_material"],
@@ -72,6 +75,7 @@ class Result {
 
   Map<String, dynamic> toJson() => {
         "id": id,
+        "image": image,
         "category_name": categoryName,
         "company": company,
         "effective_material": effectiveMaterial,

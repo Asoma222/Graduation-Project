@@ -107,7 +107,8 @@ class _HomeViewState extends State<HomeView> {
                                 children: [
                                   Container(
                                     margin: EdgeInsets.only(bottom: 2),
-                                    child: Image.asset("images/1.png"),
+                                    child: Image.network(data![index].image,
+                                        fit: BoxFit.cover),
                                     height: 70,
                                     width: 70,
                                   ),
