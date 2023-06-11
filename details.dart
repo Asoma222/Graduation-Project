@@ -162,7 +162,9 @@ class _Details_ScreenState extends State<Details_Screen2> {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsetsDirectional.only(top: 50, start: 20),
+                    padding: EdgeInsetsDirectional.only(
+                      top: 50,
+                    ),
                     child: Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
