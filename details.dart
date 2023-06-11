@@ -26,6 +26,10 @@ class Details_Screen2 extends StatefulWidget {
 class _Details_ScreenState extends State<Details_Screen2> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    double screenWidthInPixels =
+        screenWidth * MediaQuery.of(context).devicePixelRatio;
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -80,22 +84,27 @@ class _Details_ScreenState extends State<Details_Screen2> {
                     width: double.infinity,
                     height: 30,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          widget.price,
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 3, 112, 43)),
-                          textDirection: TextDirection.rtl,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Text(
+                            widget.price,
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 3, 112, 43)),
+                            textDirection: TextDirection.rtl,
+                          ),
                         ),
-                        Text(
-                          "انتاج :Amiray",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Color.fromARGB(255, 7, 1, 114)),
-                          textDirection: TextDirection.rtl,
+                        Padding(
+                          padding: EdgeInsets.only(left: (180)),
+                          child: Text(
+                            "انتاج :Amiray",
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 7, 1, 114)),
+                            textDirection: TextDirection.rtl,
+                          ),
                         ),
                       ],
                     ),
@@ -136,7 +145,7 @@ class _Details_ScreenState extends State<Details_Screen2> {
                     child: Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                        padding: EdgeInsets.only(right: 20),
+                        padding: EdgeInsets.only(right: 10, left: 10),
                         child: Text(
                           widget.usage,
                           style: TextStyle(
