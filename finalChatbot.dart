@@ -123,6 +123,7 @@ class _FChatBotState extends State<FChatBot> {
                     flex: 1,
                     child: Container(
                       child: Row(children: [
+                        SizedBox(width: 10),
                         Expanded(
                           child: TextField(
                             controller: _textEditingController,
@@ -140,7 +141,6 @@ class _FChatBotState extends State<FChatBot> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 8),
                         Transform.rotate(
                           angle: -45,
                           child: IconButton(

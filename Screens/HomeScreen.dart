@@ -107,8 +107,8 @@ class _HomeViewState extends State<HomeView> {
                                 children: [
                                   Container(
                                     margin: EdgeInsets.only(bottom: 2),
-                                    child:
-                                        Image.network('${data?[index].image}'),
+                                    child: Image.network(
+                                        "https://dwaprices.com/upload/1634903885.jpg"), //Image.network('${data?[index].image}'),
                                     height: 70,
                                     width: 70,
                                   ),
