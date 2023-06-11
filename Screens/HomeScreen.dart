@@ -108,7 +108,7 @@ class _HomeViewState extends State<HomeView> {
                                   Container(
                                     margin: EdgeInsets.only(bottom: 2),
                                     child: Image.network(
-                                        "https://dwaprices.com/upload/1634903885.jpg"), //Image.network('${data?[index].image}'),
+                                        '${data?[index].image}'), //Image.network('${data?[index].image}'),
                                     height: 70,
                                     width: 70,
                                   ),
@@ -159,6 +159,7 @@ class _HomeViewState extends State<HomeView> {
                                                 MaterialPageRoute(
                                                     builder: (context) => Details_Screen2(
                                                         '${data?[index].id}',
+                                                        '${data?[index].image}',
                                                         '${data?[index].arName}',
                                                         '${data?[index].price}',
                                                         '${data?[index].usage}',

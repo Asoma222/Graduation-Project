@@ -168,6 +168,7 @@ class SearchUser extends SearchDelegate {
                                     MaterialPageRoute(
                                         builder: (context) => Details_Screen2(
                                             '${data?[index].id}',
+                                            '${data?[index].image}',
                                             '${data?[index].arName}',
                                             '${data?[index].price}',
                                             '${data?[index].usage}',
