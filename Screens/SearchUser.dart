@@ -70,8 +70,7 @@ class SearchUser extends SearchDelegate {
 
       Future<List<Result>?> fetchData({String? query}) async {
         http.Response response = await http.get(
-            Uri.parse(
-                "http://127.0.0.1:8001/mediceines_api/medicine/?page=$page"),
+            Uri.parse("http://127.0.0.1:8000/mediceines_api/medicine/?search="),
             headers: {
               HttpHeaders.contentTypeHeader: 'application/json',
               HttpHeaders.acceptCharsetHeader: 'utf-8',

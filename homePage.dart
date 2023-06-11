@@ -77,19 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 //categories
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                  child: const Text(
-                    "categories",
-                    style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                ),
-                CategoriesWidgets(),
+
                 HomeView(),
               ],
             )),

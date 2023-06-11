@@ -88,7 +88,7 @@ class _Details_ScreenState extends State<Details_Screen2> {
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
                           child: Text(
-                            widget.price,
+                            widget.price + "جنيه",
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -97,7 +97,7 @@ class _Details_ScreenState extends State<Details_Screen2> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: (180)),
+                          padding: EdgeInsets.only(left: (140)),
                           child: Text(
                             "انتاج :Amiray",
                             style: TextStyle(
