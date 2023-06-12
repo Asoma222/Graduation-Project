@@ -132,7 +132,7 @@ class _HomeViewState extends State<HomeView> {
                                     ),
                                     alignment: Alignment.centerRight,
                                     child: Text(
-                                      '${data?[index].price}',
+                                      'جنيه ${data?[index].price}',
                                       style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,

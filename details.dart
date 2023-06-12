@@ -129,7 +129,7 @@ class _Details_ScreenState extends State<Details_Screen2> {
                     child: Padding(
                       padding: EdgeInsets.only(right: 20),
                       child: Text(
-                        "تفاصيل المنتج ",
+                        "نوع الدواء ",
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
@@ -147,7 +147,7 @@ class _Details_ScreenState extends State<Details_Screen2> {
                       child: Padding(
                         padding: EdgeInsets.only(right: 10, left: 10),
                         child: Text(
-                          widget.usage,
+                          widget.categoryName,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                           textDirection: TextDirection.rtl,
@@ -237,7 +237,7 @@ class _Details_ScreenState extends State<Details_Screen2> {
                       child: Padding(
                         padding: EdgeInsets.only(right: 20),
                         child: Text(
-                          widget.categoryName,
+                          widget.usage,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                           textDirection: TextDirection.rtl,
