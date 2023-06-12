@@ -172,17 +172,21 @@ class _FChatBotState extends State<FChatBot> {
                                         "message": message
                                       }));
                                   if (response.statusCode == 200) {
-                                    String reply =
-                                        jsonDecode(response.body)[0]['text'];
-                                    print(reply);
-                                    setState(() {
-                                      _chatMessages.add({
-                                        "text": reply,
-                                        "chat_index": 1
-                                      }); // Add a Map object with "text" and "chat_index" keys and their corresponding values
-                                    });
+                                    List<dynamic> jsonData =
+                                        json.decode(response.body);
+                                    List<Map<String, dynamic>> data =
+                                        jsonData.cast<Map<String, dynamic>>();
+                                    for (Map<String, dynamic> item in data) {
+                                      // Access the properties of each map
+                                      String text = item['text'];
+                                      print(text);
+                                      setState(() {
+                                        _chatMessages.add(
+                                            {"text": text, "chat_index": 1});
+                                      });
+                                    }
+                                    count = 1; // delete it if there's problem
                                   }
-                                  count = 1; // delete it if there's problem
                                 }
                               } catch (e) {
                                 setState(() {
@@ -282,3 +286,16 @@ class _FChatBotState extends State<FChatBot> {
 //                                       ),
 //                                     ],
 //                                   ),
+
+
+
+
+// String reply =
+//                                         jsonDecode(response.body)[0]['text'];
+//                                     print(reply);
+//                                     setState(() {
+//                                       _chatMessages.add({
+//                                         "text": reply,
+//                                         "chat_index": 1
+//                                       }); // Add a Map object with "text" and "chat_index" keys and their corresponding values
+//                                     });
