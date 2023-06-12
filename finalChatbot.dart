@@ -131,6 +131,8 @@ class _FChatBotState extends State<FChatBot> {
                             decoration: InputDecoration(
                               fillColor: Color.fromRGBO(43, 43, 43, 1),
                               hintText: 'Type a message',
+                              hintStyle: TextStyle(
+                                  color: Color.fromRGBO(255, 198, 153, 1.0)),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(16),
                                 borderSide: BorderSide.none,
