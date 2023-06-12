@@ -11,23 +11,13 @@ class HomeAppBar extends StatelessWidget {
       padding: EdgeInsets.all(25),
       child: Row(
         children: [
-          Badge(
-            backgroundColor: Colors.red,
-            padding: EdgeInsets.all(7),
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FChatBot()));
-              },
-              child: Icon(
-                Icons.chat,
-              ),
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(right: 50)),
+          Padding(
+              padding: EdgeInsets.only(
+            right: 5,
+          )),
           Center(
             child: Container(
-              padding: EdgeInsets.only(top: 10, left: 8, right: 15),
+              padding: EdgeInsets.all(7),
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 7, 176, 27),
                 borderRadius: BorderRadius.circular(20),
@@ -50,18 +40,13 @@ class HomeAppBar extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Icon(
-            Icons.medical_information,
-            size: 30,
-            color: Color.fromARGB(249, 7, 179, 62),
-          ),
           Padding(
-            padding: EdgeInsets.only(left: 0),
+            padding: EdgeInsets.only(left: 10, right: 0),
           ),
           Image.asset(
             "images/11.png",
-            height: 55,
-            width: 55,
+            height: 50,
+            width: 50,
           ),
         ],
       ),

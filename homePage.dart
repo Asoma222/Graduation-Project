@@ -3,6 +3,7 @@ import 'package:project/Screens/HomeScreen.dart';
 import 'package:project/Screens/SearchUser.dart';
 import 'package:project/Widgets/CategoriesWidgets.dart';
 import 'package:project/Widgets/HomeAppBar.dart';
+import 'package:project/bot/ChatHome.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -16,6 +17,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: SizedBox(
+        height: 80,
+        width: 80,
+        child: FloatingActionButton(
+          child: const ImageIcon(
+            AssetImage('images/bot.png'),
+          ),
+          backgroundColor: Color.fromARGB(255, 33, 243, 65),
+          highlightElevation: 50,
+          focusColor: Color.fromARGB(255, 11, 68, 201),
+          autofocus: true,
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ChatHome()));
+          },
+        ),
+      ),
       body: ListView(
         children: [
           HomeAppBar(),
@@ -42,11 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.camera_alt,
-                        size: 27,
-                        color: Color.fromARGB(255, 54, 57, 244),
-                      ),
                       const Spacer(),
                       Container(
                         margin: const EdgeInsets.all(5),
