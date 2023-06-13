@@ -99,7 +99,7 @@ class _HomeViewState extends State<HomeView> {
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
-                              childAspectRatio: 0.5,
+                              childAspectRatio: 0.7,
                             ),
                             itemCount: data?.length,
                             itemBuilder: (context, index) {
@@ -107,8 +107,8 @@ class _HomeViewState extends State<HomeView> {
                                 children: [
                                   Container(
                                     margin: EdgeInsets.only(bottom: 2),
-                                    child: Image.network(
-                                        '${data?[index].image}'), //Image.network('${data?[index].image}'),
+                                    child:
+                                        Image.network('${data?[index].image}'),
                                     height: 70,
                                     width: 70,
                                   ),
@@ -119,6 +119,7 @@ class _HomeViewState extends State<HomeView> {
                                     alignment: Alignment.centerRight,
                                     child: Text(
                                       '${data?[index].arName}',
+                                      maxLines: 1,
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
@@ -132,11 +133,12 @@ class _HomeViewState extends State<HomeView> {
                                     ),
                                     alignment: Alignment.centerRight,
                                     child: Text(
-                                      'جنيه ${data?[index].price}',
+                                      '${data?[index].price}' + ' EGP',
                                       style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.green),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green,
+                                      ),
                                     ),
                                   ),
                                   Row(

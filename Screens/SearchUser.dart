@@ -125,7 +125,7 @@ class SearchUser extends SearchDelegate {
                         children: [
                           Container(
                             margin: EdgeInsets.only(bottom: 2),
-                            child: Image.asset("images/1.png"),
+                            child: Image.network('${data?[index].image}'),
                             height: 70,
                             width: 70,
                           ),
@@ -149,7 +149,7 @@ class SearchUser extends SearchDelegate {
                             ),
                             alignment: Alignment.centerRight,
                             child: Text(
-                              '${data?[index].price}',
+                              '${data?[index].price}' + ' EGP',
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,

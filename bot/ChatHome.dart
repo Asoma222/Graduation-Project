@@ -31,11 +31,14 @@ class _ChatHomeState extends State<ChatHome> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            child: Text(
-              "Hello,I am Your Medical Assistant",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                "Hello,I am Your Medical Assistant",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
