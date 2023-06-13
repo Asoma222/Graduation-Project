@@ -110,91 +110,93 @@ class SearchUser extends SearchDelegate {
           builder: (context, snapshot) {
             if (snapshot.hasData) {}
             List<Result>? data = snapshot.data;
-            return ListView.builder(
-                controller: scrollController,
-                itemCount: data?.length,
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          margin: EdgeInsets.only(bottom: 8),
-                          child: Image.network('${data?[index].image}'),
-                          height: 120,
-                          width: 120,
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(bottom: 8),
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          '${data?[index].arName}',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 75, 33, 243)),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          '${data?[index].effectiveMaterial}',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color.fromARGB(255, 75, 33, 243)),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          '${data?[index].price}',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green),
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+            return MediaQuery.removePadding(
+                context: context,
+                removeTop: true,
+                child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.7,
+                    ),
+                    itemCount: data?.length,
+                    itemBuilder: (context, index) {
+                      return Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 7, 176, 27),
-                              borderRadius: BorderRadius.circular(15),
+                            margin: EdgeInsets.only(bottom: 2),
+                            child: Image.asset("images/1.png"),
+                            height: 70,
+                            width: 70,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(
+                              left: 20.0,
                             ),
-                            child: Center(
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Details_Screen2(
-                                            '${data?[index].id}',
-                                            '${data?[index].image}',
-                                            '${data?[index].arName}',
-                                            '${data?[index].price}',
-                                            '${data?[index].usage}',
-                                            '${data?[index].effectiveMaterial}',
-                                            '${data?[index].categoryName}')),
-                                  );
-                                },
-                                child: Text(
-                                  "تفاصيل",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                              ),
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                              '${data?[index].arName}',
+                              maxLines: 1,
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 75, 33, 243)),
                             ),
                           ),
+                          Container(
+                            padding: const EdgeInsets.only(
+                              left: 20.0,
+                            ),
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                              '${data?[index].price}',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(
+                                    right: 10, left: 10, top: 2),
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 7, 176, 27),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Center(
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Details_Screen2(
+                                                '${data?[index].id}',
+                                                '${data?[index].image}',
+                                                '${data?[index].arName}',
+                                                '${data?[index].price}',
+                                                '${data?[index].usage}',
+                                                '${data?[index].effectiveMaterial}',
+                                                '${data?[index].categoryName}')),
+                                      );
+                                    },
+                                    child: Text(
+                                      "تفاصيل",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
-                      ),
-                    ],
-                  );
-                });
+                      );
+                    }));
           });
     });
   }
