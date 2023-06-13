@@ -173,7 +173,7 @@ class _Details_ScreenState extends State<Details_Screen2> {
                     child: Padding(
                       padding: EdgeInsets.only(right: 20),
                       child: Text(
-                        "الماده الفاعله ",
+                        "الماده الفعاله ",
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
